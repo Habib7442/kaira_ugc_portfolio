@@ -1,0 +1,130 @@
+{
+  "$schema": "./creator.schema.json",
+  "demo": true,
+  "name": "Kaira Vale",
+  "firstName": "Kaira",
+  "handle": "kairavale.ugc",
+  "year": 2026,
+  "role": "UGC Creator",
+  "tagline": "Real, relatable content for beauty, skincare & everyday brands.",
+  "bio": [
+    "I make scroll-stopping UGC that feels like a friend's recommendation, not an ad.",
+    "Skincare routines, honest reviews and unboxings, shot in natural light and edited for Reels."
+  ],
+  "location": "Mumbai, India",
+  "languages": ["English", "Hindi", "Marathi"],
+  "niches": ["Beauty", "Skincare", "Lifestyle", "Food & Drink"],
+  "turnaround": "5–7 days",
+  "stats": {
+    "demo": true,
+    "followers": 48200,
+    "avgViews": 126000,
+    "brands": 24
+  },
+  "photos": {
+    "master": "creator/master.png",
+    "coverCutout": "creator/cover-cutout.png",
+    "coverCutoutMobile": "creator/cover-cutout-mobile.png",
+    "polaroid": "creator/polaroid.png",
+    "orbitCutout": "creator/orbit-cutout.png"
+  },
+  "videos": [
+    { "id": "v1", "src": "video/v1-unboxing.mp4", "type": "Unboxing", "brand": "GLOWRY", "caption": "Unboxing the GLOWRY starter set: first impressions in one take." },
+    { "id": "v2", "src": "video/v2-tutorial.mp4", "type": "Tutorial", "brand": "GLOWRY", "caption": "How I layer the GLOWRY serum for a glassy morning glow." },
+    { "id": "v3", "src": "video/v3-review.mp4", "type": "Review", "brand": "BREW&CO", "caption": "Honest review: BREW&CO cold coffee, first sip to last." },
+    { "id": "v4", "src": "video/v4-hook.mp4", "type": "Hook", "brand": "DEWDROP", "caption": "Hook test: \"Your sunscreen is lying to you\" for DEWDROP SPF 50." },
+    { "id": "v5", "src": "video/v5-lifestyle.mp4", "type": "Lifestyle", "brand": "LOOM STUDIO", "caption": "One tote, three outfits: styling the LOOM STUDIO everyday bag." },
+    { "id": "v6", "src": "video/v6-product.mp4", "type": "Product", "brand": "GLOWRY", "caption": "Satisfying product shot for GLOWRY, made for voiceover ads." }
+  ],
+  "brands": [
+    { "name": "GLOWRY", "style": "sans-black" },
+    { "name": "BREW&CO", "style": "display" },
+    { "name": "DEWDROP", "style": "serif" },
+    { "name": "LOOM STUDIO", "style": "sans-wide" },
+    { "name": "mosswell", "style": "sans-light" },
+    { "name": "ZESTIQ", "style": "display" },
+    { "name": "Cloudkind", "style": "serif" },
+    { "name": "NIMBU NOIR", "style": "sans-black" },
+    { "name": "pebble & pine", "style": "sans-light" },
+    { "name": "VELVO", "style": "sans-wide" }
+  ],
+  "caseStudies": [
+    {
+      "brand": "GLOWRY",
+      "image": "cases/glowry.png",
+      "videoIds": ["v1", "v2", "v6"],
+      "deliverables": ["Video", "Reel", "Photos"],
+      "brief": "Launch a 3-step skincare set to first-time buyers aged 20–30 without looking like an ad.",
+      "whatIMade": "An unboxing, a morning-routine tutorial and a product loop for voiceover ads, plus 8 product photos.",
+      "results": [
+        { "value": "1.4M", "label": "views across paid ads" },
+        { "value": "2.9%", "label": "click-through rate" },
+        { "value": "41%", "label": "3-second hook rate" }
+      ]
+    },
+    {
+      "brand": "BREW&CO",
+      "image": "cases/brewco.png",
+      "videoIds": ["v3"],
+      "deliverables": ["Video", "Reel"],
+      "brief": "Make a new cold-coffee can feel like the obvious café swap for busy mornings.",
+      "whatIMade": "An honest first-sip review with three alternative hooks for A/B testing.",
+      "results": [
+        { "value": "620K", "label": "organic views" },
+        { "value": "3 of 3", "label": "hooks beat the brand benchmark" },
+        { "value": "₹38", "label": "cost per add-to-cart" }
+      ]
+    },
+    {
+      "brand": "DEWDROP",
+      "image": "cases/dewdrop.png",
+      "videoIds": ["v4"],
+      "deliverables": ["Video", "Reel", "Photos"],
+      "brief": "Get people who skip sunscreen to try a lightweight SPF 50 this summer.",
+      "whatIMade": "A myth-busting outdoor hook video and a set of sunny lifestyle photos.",
+      "results": [
+        { "value": "880K", "label": "views in 14 days" },
+        { "value": "12K", "label": "saves" },
+        { "value": "2.1×", "label": "return on ad spend" }
+      ]
+    }
+  ],
+  "showPrices": true,
+  "currency": "₹",
+  "services": [
+    { "name": "UGC Video", "includes": ["1 vertical video, 15–45s", "Script & 1 hook", "2 rounds of edits"], "fromPrice": 6000 },
+    { "name": "Video Bundle", "includes": ["3 vertical videos", "3 hooks per video", "Subtitles & captions"], "fromPrice": 15000 },
+    { "name": "Product Photos", "includes": ["10 edited photos", "Lifestyle + flat lay", "Web & social sizes"], "fromPrice": 5000 },
+    { "name": "Voiceover Ads", "includes": ["Faceless product video", "Recorded voiceover", "Music & sound design"], "fromPrice": 4500 }
+  ],
+  "addOns": [
+    { "name": "Usage rights (30 days)", "fromPrice": 3000 },
+    { "name": "Raw footage", "fromPrice": 2000 },
+    { "name": "Extra hooks ×3", "fromPrice": 1500 },
+    { "name": "Rush delivery (48h)", "fromPrice": 2500 }
+  ],
+  "badgeText": "UGC VIDEOS • PRODUCT PHOTOS • VOICEOVERS • ",
+  "process": [
+    { "title": "Brief", "line": "You share the product, goals and must-says. I ask the right questions.", "icon": "brief" },
+    { "title": "Script", "line": "I write hooks and a shot list for your approval before I film.", "icon": "script" },
+    { "title": "Shoot", "line": "Filmed in natural light at home, outdoors or on location.", "icon": "shoot" },
+    { "title": "Deliver", "line": "Edited, captioned videos in 5–7 days, ready for ads or Reels.", "icon": "deliver" }
+  ],
+  "tools": ["CapCut", "Canva", "Lightroom", "VN Editor", "Notion"],
+  "contact": {
+    "email": "kaira@example.com",
+    "instagram": "kairavale.ugc",
+    "mediaKitUrl": "/media-kit.pdf"
+  },
+  "theme": {
+    "ink": "#13142A",
+    "paper": "#F1F2F7",
+    "lime": "#D6FF3D",
+    "lavender": "#B8A6FF",
+    "tomato": "#FF5436"
+  },
+  "seo": {
+    "title": "Kaira Vale · UGC Creator · Beauty, Skincare & Lifestyle",
+    "description": "UGC creator portfolio of Kaira Vale: unboxings, tutorials and honest reviews for beauty, skincare and lifestyle brands in India."
+  }
+}

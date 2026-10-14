@@ -1,0 +1,48 @@
+/* ---------- 2. about ---------- */
+.about { position: relative; z-index: 1; padding: clamp(5rem, 12vw, 9rem) 0; background: var(--paper); }
+.about__grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2.5rem, 6vw, 6rem); align-items: center; }
+.about__photo { perspective: 900px; display: flex; justify-content: center; }
+
+.polaroid {
+  --rot: -4deg;
+  position: relative; width: min(420px, 100%); padding: 14px 14px 64px; border-radius: 8px;
+  background: var(--white); box-shadow: 0 2px 0 rgba(19, 20, 42, .08), 0 30px 60px -20px rgba(19, 20, 42, .35);
+  transform: rotate(var(--rot)); transform-style: preserve-3d;
+}
+.polaroid__img { position: relative; aspect-ratio: 1; overflow: hidden; border-radius: 3px; background: #E4E5EC; }
+.polaroid__img img { width: 100%; height: 100%; object-fit: cover; }
+.polaroid__blank { position: absolute; inset: 0; background: #E4E5EC; opacity: 0; }
+.js .polaroid__blank { opacity: 1; }
+.polaroid figcaption { position: absolute; left: 0; right: 0; bottom: 16px; text-align: center; font: italic 400 1.45rem/1 var(--f-serif); }
+.polaroid::after { /* tape */
+  content: ''; position: absolute; top: -14px; left: 50%; width: 110px; height: 30px; margin-left: -55px;
+  background: color-mix(in srgb, var(--lime) 80%, transparent); transform: rotate(3deg); border-radius: 3px;
+}
+
+.about__hi { font: italic 400 clamp(3.5rem, 9vw, 7.5rem)/.95 var(--f-serif); letter-spacing: -.01em; }
+.about__hi em { font-style: italic; background: linear-gradient(transparent 62%, var(--lime) 62%, var(--lime) 92%, transparent 92%); padding-right: .08em; }
+.about__bio { margin-top: 1.25rem; font-size: clamp(1.05rem, 1.4vw, 1.2rem); max-width: 40ch; }
+.chips { display: flex; flex-wrap: wrap; gap: .7rem .6rem; margin-top: 1.5rem; }
+.chips .sticker { font-size: .92rem; padding: .5em 1em; }
+
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; padding-top: 1.25rem; border-top: 1.5px solid var(--ink); }
+.facts dt { font: 600 .7rem/1.2 var(--f-sans); text-transform: uppercase; letter-spacing: .12em; opacity: .75; }
+.facts dd { margin-top: .35rem; font-weight: 600; font-size: 1rem; line-height: 1.3; }
+
+.stats { display: flex; align-items: flex-end; flex-wrap: wrap; gap: 1rem 2rem; margin-top: 1.75rem; }
+.stats__list { display: flex; gap: clamp(1.25rem, 4vw, 3rem); }
+.stat { display: flex; flex-direction: column; }
+.stat__num { font: 900 clamp(2.6rem, 5vw, 4rem)/.9 var(--f-display); font-variant-numeric: tabular-nums; }
+.stat__label { font-size: .8rem; font-weight: 500; opacity: .8; margin-top: .25rem; }
+
+@media (max-width: 767px) {
+  .about__grid { grid-template-columns: 1fr; }
+  .about__photo { order: 2; padding: 0 8%; }
+  .about__text { display: contents; }
+  .about__hi { order: 1; }
+  .about__bio, .chips, .facts, .stats { order: 3; }
+  .about__bio { margin-top: 0; }
+  .chips, .facts, .stats { margin-top: -1rem; }
+  .facts { grid-template-columns: 1fr 1fr; }
+  .facts > div:first-child { grid-column: 1 / -1; }
+}

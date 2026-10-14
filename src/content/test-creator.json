@@ -1,0 +1,76 @@
+{
+  "$schema": "./creator.schema.json",
+  "demo": true,
+  "name": "Anoushka Dey",
+  "firstName": "Anoushka",
+  "handle": "anoushka.makes",
+  "year": 2026,
+  "role": "UGC Creator",
+  "tagline": "Café finds, quick routines and products I actually reach for.",
+  "bio": [
+    "Kolkata-based creator making short, warm product stories for food and beauty brands."
+  ],
+  "location": "Kolkata, India",
+  "languages": ["English", "Bengali"],
+  "niches": ["Food & Drink", "Beauty", "Fashion"],
+  "turnaround": "7 days",
+  "stats": { "demo": true, "followers": 12400, "avgViews": 31000 },
+  "photos": {
+    "coverCutout": "creator/cover-cutout.png",
+    "polaroid": "creator/polaroid.png",
+    "orbitCutout": "creator/orbit-cutout.png"
+  },
+  "videos": [
+    { "id": "coffee", "src": "video/v3-review.mp4", "type": "Review", "brand": "BREW&CO", "caption": "Is this the best canned cold coffee? Honest take." },
+    { "id": "sunny", "src": "video/v4-hook.mp4", "type": "Hook", "brand": "DEWDROP", "caption": "Three-second hook for a summer SPF." },
+    { "id": "tote", "src": "video/v5-lifestyle.mp4", "type": "Lifestyle", "brand": "LOOM STUDIO", "caption": "Desk to dinner with one tote." },
+    { "id": "drop", "src": "video/v6-product.mp4", "type": "Voiceover", "brand": "GLOWRY", "caption": "Product loop made for voiceover ads." }
+  ],
+  "brands": [
+    { "name": "BREW&CO" },
+    { "name": "DEWDROP" },
+    { "name": "LOOM STUDIO" },
+    { "name": "GLOWRY" },
+    { "name": "Saffron Row" }
+  ],
+  "caseStudies": [
+    {
+      "brand": "BREW&CO",
+      "image": "cases/brewco.png",
+      "videoIds": ["coffee"],
+      "deliverables": ["Video"],
+      "brief": "Introduce a cold coffee can to office workers.",
+      "whatIMade": "One review video with two hooks.",
+      "results": [{ "value": "210K", "label": "views" }]
+    },
+    {
+      "brand": "DEWDROP",
+      "image": "cases/dewdrop.png",
+      "videoIds": ["sunny", "drop"],
+      "deliverables": ["Video", "Photos"],
+      "brief": "Make SPF feel easy for first-timers.",
+      "whatIMade": "A hook video and a product loop.",
+      "results": [{ "value": "4.2K", "label": "saves" }, { "value": "1.8×", "label": "ROAS" }]
+    }
+  ],
+  "showPrices": false,
+  "services": [
+    { "name": "UGC Video", "includes": ["1 video", "2 hooks"], "fromPrice": 4000 },
+    { "name": "Photo Set", "includes": ["8 photos"] }
+  ],
+  "process": [
+    { "title": "Chat", "line": "We talk about the product and the goal.", "icon": "chat" },
+    { "title": "Shoot", "line": "I film at home or at your café.", "icon": "shoot" },
+    { "title": "Deliver", "line": "Edited videos within a week.", "icon": "deliver" }
+  ],
+  "tools": ["CapCut", "Canva"],
+  "contact": {
+    "email": "anoushka@example.com",
+    "instagram": "anoushka.makes",
+    "whatsapp": "+91 90000 00000"
+  },
+  "theme": {
+    "lime": "#FFB3D9",
+    "lavender": "#9FE3C9"
+  }
+}

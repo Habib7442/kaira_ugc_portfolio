@@ -1,0 +1,329 @@
+{
+  "cases/brewco.png": {
+    "kind": "image",
+    "width": 1254,
+    "height": 1254,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/media/cases/brewco-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/media/cases/brewco-960.avif"
+      },
+      {
+        "w": 1254,
+        "src": "/media/cases/brewco-1254.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/media/cases/brewco-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/media/cases/brewco-960.webp"
+      },
+      {
+        "w": 1254,
+        "src": "/media/cases/brewco-1254.webp"
+      }
+    ]
+  },
+  "cases/dewdrop.png": {
+    "kind": "image",
+    "width": 1254,
+    "height": 1254,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/media/cases/dewdrop-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/media/cases/dewdrop-960.avif"
+      },
+      {
+        "w": 1254,
+        "src": "/media/cases/dewdrop-1254.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/media/cases/dewdrop-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/media/cases/dewdrop-960.webp"
+      },
+      {
+        "w": 1254,
+        "src": "/media/cases/dewdrop-1254.webp"
+      }
+    ]
+  },
+  "cases/glowry.png": {
+    "kind": "image",
+    "width": 1254,
+    "height": 1254,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/media/cases/glowry-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/media/cases/glowry-960.avif"
+      },
+      {
+        "w": 1254,
+        "src": "/media/cases/glowry-1254.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/media/cases/glowry-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/media/cases/glowry-960.webp"
+      },
+      {
+        "w": 1254,
+        "src": "/media/cases/glowry-1254.webp"
+      }
+    ]
+  },
+  "creator/cover-cutout-mobile.png": {
+    "kind": "cutout",
+    "webp": [
+      {
+        "w": 539,
+        "h": 1000,
+        "src": "/media/creator/cover-cutout-mobile-1000h.webp"
+      },
+      {
+        "w": 755,
+        "h": 1400,
+        "src": "/media/creator/cover-cutout-mobile-1400h.webp"
+      },
+      {
+        "w": 855,
+        "h": 1585,
+        "src": "/media/creator/cover-cutout-mobile-1672h.webp"
+      }
+    ],
+    "width": 855,
+    "height": 1585
+  },
+  "creator/cover-cutout.png": {
+    "kind": "cutout",
+    "webp": [
+      {
+        "w": 368,
+        "h": 1000,
+        "src": "/media/creator/cover-cutout-1000h.webp"
+      },
+      {
+        "w": 507,
+        "h": 1379,
+        "src": "/media/creator/cover-cutout-1400h.webp"
+      },
+      {
+        "w": 507,
+        "h": 1379,
+        "src": "/media/creator/cover-cutout-1402h.webp"
+      }
+    ],
+    "width": 507,
+    "height": 1379
+  },
+  "creator/master.png": {
+    "kind": "image",
+    "width": 1122,
+    "height": 1402,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/media/creator/master-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/media/creator/master-960.avif"
+      },
+      {
+        "w": 1122,
+        "src": "/media/creator/master-1122.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/media/creator/master-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/media/creator/master-960.webp"
+      },
+      {
+        "w": 1122,
+        "src": "/media/creator/master-1122.webp"
+      }
+    ]
+  },
+  "creator/orbit-cutout.png": {
+    "kind": "cutout",
+    "webp": [
+      {
+        "w": 775,
+        "h": 1000,
+        "src": "/media/creator/orbit-cutout-1000h.webp"
+      },
+      {
+        "w": 1058,
+        "h": 1365,
+        "src": "/media/creator/orbit-cutout-1400h.webp"
+      },
+      {
+        "w": 1058,
+        "h": 1365,
+        "src": "/media/creator/orbit-cutout-1402h.webp"
+      }
+    ],
+    "width": 1058,
+    "height": 1365
+  },
+  "creator/polaroid.png": {
+    "kind": "image",
+    "width": 1254,
+    "height": 1254,
+    "avif": [
+      {
+        "w": 480,
+        "src": "/media/creator/polaroid-480.avif"
+      },
+      {
+        "w": 960,
+        "src": "/media/creator/polaroid-960.avif"
+      },
+      {
+        "w": 1254,
+        "src": "/media/creator/polaroid-1254.avif"
+      }
+    ],
+    "webp": [
+      {
+        "w": 480,
+        "src": "/media/creator/polaroid-480.webp"
+      },
+      {
+        "w": 960,
+        "src": "/media/creator/polaroid-960.webp"
+      },
+      {
+        "w": 1254,
+        "src": "/media/creator/polaroid-1254.webp"
+      }
+    ]
+  },
+  "video/v1-unboxing.mp4": {
+    "kind": "video",
+    "duration": 10,
+    "hasAudio": false,
+    "mp4": "/media/video/v1-unboxing.mp4",
+    "webm": "/media/video/v1-unboxing.webm",
+    "preview": "/media/video/v1-unboxing-preview.mp4",
+    "poster": "/media/video/v1-unboxing-poster.jpg",
+    "posterSm": "/media/video/v1-unboxing-poster-sm.jpg",
+    "thumbs": [
+      "/media/video/v1-unboxing-t1.webp",
+      "/media/video/v1-unboxing-t2.webp",
+      "/media/video/v1-unboxing-t3.webp",
+      "/media/video/v1-unboxing-t4.webp"
+    ]
+  },
+  "video/v2-tutorial.mp4": {
+    "kind": "video",
+    "duration": 10,
+    "hasAudio": false,
+    "mp4": "/media/video/v2-tutorial.mp4",
+    "webm": "/media/video/v2-tutorial.webm",
+    "preview": "/media/video/v2-tutorial-preview.mp4",
+    "poster": "/media/video/v2-tutorial-poster.jpg",
+    "posterSm": "/media/video/v2-tutorial-poster-sm.jpg",
+    "thumbs": [
+      "/media/video/v2-tutorial-t1.webp",
+      "/media/video/v2-tutorial-t2.webp",
+      "/media/video/v2-tutorial-t3.webp",
+      "/media/video/v2-tutorial-t4.webp"
+    ]
+  },
+  "video/v3-review.mp4": {
+    "kind": "video",
+    "duration": 10,
+    "hasAudio": false,
+    "mp4": "/media/video/v3-review.mp4",
+    "webm": "/media/video/v3-review.webm",
+    "preview": "/media/video/v3-review-preview.mp4",
+    "poster": "/media/video/v3-review-poster.jpg",
+    "posterSm": "/media/video/v3-review-poster-sm.jpg",
+    "thumbs": [
+      "/media/video/v3-review-t1.webp",
+      "/media/video/v3-review-t2.webp",
+      "/media/video/v3-review-t3.webp",
+      "/media/video/v3-review-t4.webp"
+    ]
+  },
+  "video/v4-hook.mp4": {
+    "kind": "video",
+    "duration": 10,
+    "hasAudio": false,
+    "mp4": "/media/video/v4-hook.mp4",
+    "webm": "/media/video/v4-hook.webm",
+    "preview": "/media/video/v4-hook-preview.mp4",
+    "poster": "/media/video/v4-hook-poster.jpg",
+    "posterSm": "/media/video/v4-hook-poster-sm.jpg",
+    "thumbs": [
+      "/media/video/v4-hook-t1.webp",
+      "/media/video/v4-hook-t2.webp",
+      "/media/video/v4-hook-t3.webp",
+      "/media/video/v4-hook-t4.webp"
+    ]
+  },
+  "video/v5-lifestyle.mp4": {
+    "kind": "video",
+    "duration": 10,
+    "hasAudio": false,
+    "mp4": "/media/video/v5-lifestyle.mp4",
+    "webm": "/media/video/v5-lifestyle.webm",
+    "preview": "/media/video/v5-lifestyle-preview.mp4",
+    "poster": "/media/video/v5-lifestyle-poster.jpg",
+    "posterSm": "/media/video/v5-lifestyle-poster-sm.jpg",
+    "thumbs": [
+      "/media/video/v5-lifestyle-t1.webp",
+      "/media/video/v5-lifestyle-t2.webp",
+      "/media/video/v5-lifestyle-t3.webp",
+      "/media/video/v5-lifestyle-t4.webp"
+    ]
+  },
+  "video/v6-product.mp4": {
+    "kind": "video",
+    "duration": 9.96,
+    "hasAudio": false,
+    "mp4": "/media/video/v6-product.mp4",
+    "webm": "/media/video/v6-product.webm",
+    "preview": "/media/video/v6-product-preview.mp4",
+    "poster": "/media/video/v6-product-poster.jpg",
+    "posterSm": "/media/video/v6-product-poster-sm.jpg",
+    "thumbs": [
+      "/media/video/v6-product-t1.webp",
+      "/media/video/v6-product-t2.webp",
+      "/media/video/v6-product-t3.webp",
+      "/media/video/v6-product-t4.webp"
+    ]
+  }
+}

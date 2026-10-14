@@ -1,0 +1,185 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Behind the Post — creator content",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["demo", "name", "firstName", "handle", "tagline", "bio", "location", "languages", "niches", "turnaround", "stats", "photos", "videos", "brands", "caseStudies", "showPrices", "services", "process", "tools", "contact"],
+  "definitions": {
+    "rawPath": { "type": "string", "pattern": "^[^/\\\\].*\\.(png|jpe?g|webp|mp4|mov|m4v|webm)$", "description": "Path inside raw/, e.g. creator/polaroid.png" },
+    "nonEmpty": { "type": "string", "minLength": 1 },
+    "hex": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+    "price": { "type": "number", "minimum": 0 }
+  },
+  "properties": {
+    "$schema": { "type": "string" },
+    "demo": { "type": "boolean", "description": "true shows the concept-demo disclaimer and demo labels" },
+    "name": { "$ref": "#/definitions/nonEmpty" },
+    "firstName": { "type": "string", "minLength": 2, "maxLength": 10, "description": "Shown huge on the cover. Up to 10 letters." },
+    "handle": { "type": "string", "pattern": "^[A-Za-z0-9._]+$", "description": "Instagram handle without @" },
+    "year": { "type": "integer" },
+    "role": { "type": "string" },
+    "tagline": { "type": "string", "minLength": 10, "maxLength": 110 },
+    "bio": { "type": "array", "minItems": 1, "maxItems": 2, "items": { "type": "string", "maxLength": 140 } },
+    "location": { "$ref": "#/definitions/nonEmpty" },
+    "languages": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "niches": { "type": "array", "minItems": 1, "maxItems": 6, "items": { "type": "string" } },
+    "turnaround": { "$ref": "#/definitions/nonEmpty" },
+    "stats": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["demo"],
+      "properties": {
+        "demo": { "type": "boolean" },
+        "followers": { "type": "number", "minimum": 0 },
+        "avgViews": { "type": "number", "minimum": 0 },
+        "brands": { "type": "number", "minimum": 0 }
+      }
+    },
+    "photos": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coverCutout", "polaroid", "orbitCutout"],
+      "properties": {
+        "master": { "$ref": "#/definitions/rawPath" },
+        "coverCutout": { "$ref": "#/definitions/rawPath" },
+        "coverCutoutMobile": { "$ref": "#/definitions/rawPath" },
+        "polaroid": { "$ref": "#/definitions/rawPath" },
+        "orbitCutout": { "$ref": "#/definitions/rawPath" }
+      }
+    },
+    "videos": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "src", "type", "brand", "caption"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "src": { "$ref": "#/definitions/rawPath" },
+          "poster": { "$ref": "#/definitions/rawPath" },
+          "type": { "enum": ["Unboxing", "Tutorial", "Review", "Hook", "Lifestyle", "Product", "Voiceover"] },
+          "brand": { "$ref": "#/definitions/nonEmpty" },
+          "caption": { "type": "string", "maxLength": 160 },
+          "audio": { "type": "boolean", "description": "Keep the sound track (shows an unmute button in the player)" }
+        }
+      }
+    },
+    "brands": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 16,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name"],
+        "properties": {
+          "name": { "type": "string", "maxLength": 18 },
+          "style": { "enum": ["sans-black", "sans-light", "sans-wide", "serif", "display"] }
+        }
+      }
+    },
+    "caseStudies": {
+      "type": "array",
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["brand", "image", "videoIds", "brief", "whatIMade", "results"],
+        "properties": {
+          "brand": { "$ref": "#/definitions/nonEmpty" },
+          "image": { "$ref": "#/definitions/rawPath" },
+          "videoIds": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+          "deliverables": { "type": "array", "items": { "type": "string" } },
+          "brief": { "type": "string", "maxLength": 200 },
+          "whatIMade": { "type": "string", "maxLength": 200 },
+          "results": {
+            "type": "array",
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["value", "label"],
+              "properties": { "value": { "type": "string" }, "label": { "type": "string" } }
+            }
+          }
+        }
+      }
+    },
+    "showPrices": { "type": "boolean" },
+    "currency": { "type": "string", "maxLength": 3 },
+    "services": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "includes"],
+        "properties": {
+          "name": { "$ref": "#/definitions/nonEmpty" },
+          "includes": { "type": "array", "items": { "type": "string" } },
+          "fromPrice": { "$ref": "#/definitions/price" }
+        }
+      }
+    },
+    "addOns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name"],
+        "properties": { "name": { "type": "string" }, "fromPrice": { "$ref": "#/definitions/price" } }
+      }
+    },
+    "badgeText": { "type": "string", "minLength": 10, "maxLength": 60 },
+    "process": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "line"],
+        "properties": {
+          "title": { "type": "string" },
+          "line": { "type": "string", "maxLength": 120 },
+          "icon": { "enum": ["brief", "script", "shoot", "deliver", "edit", "chat"] }
+        }
+      }
+    },
+    "tools": { "type": "array", "items": { "type": "string" } },
+    "contact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["email"],
+      "properties": {
+        "email": { "type": "string", "pattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$" },
+        "instagram": { "type": "string", "pattern": "^[A-Za-z0-9._]+$" },
+        "whatsapp": { "type": "string", "pattern": "^\\+?[0-9 ]{8,18}$", "description": "International format, e.g. +91 98765 43210" },
+        "mediaKitUrl": { "type": "string" },
+        "tiktok": { "type": "string" },
+        "youtube": { "type": "string" }
+      }
+    },
+    "theme": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ink": { "$ref": "#/definitions/hex" },
+        "paper": { "$ref": "#/definitions/hex" },
+        "lime": { "$ref": "#/definitions/hex" },
+        "lavender": { "$ref": "#/definitions/hex" },
+        "tomato": { "$ref": "#/definitions/hex" }
+      }
+    },
+    "seo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": { "type": "string", "maxLength": 70 },
+        "description": { "type": "string", "maxLength": 170 },
+        "siteUrl": { "type": "string" }
+      }
+    }
+  }
+}

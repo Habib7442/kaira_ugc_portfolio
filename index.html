@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>
+/* Runs before first paint: picks the motion mode so layout never jumps. */
+(function () {
+  var d = document.documentElement, c = d.classList, q = location.search, n = navigator, mm = function (s) { return matchMedia(s).matches; };
+  var capture = /[?&]capture=1/.test(q);
+  var rm = !capture && (mm('(prefers-reduced-motion: reduce)') || /[?&]motion=reduce/.test(q));
+  var lite = !capture && (/[?&]lite=1/.test(q) || (n.connection && n.connection.saveData) || (n.deviceMemory && n.deviceMemory <= 2) || (n.hardwareConcurrency && n.hardwareConcurrency <= 2));
+  c.add('js');
+  if (!rm) c.add('fx');
+  if (!rm && !lite) c.add('fx3d');
+  if (capture) c.add('is-capture');
+  if (mm('(hover: none), (pointer: coarse)')) c.add('is-touch');
+  var seen = false; try { seen = !!sessionStorage.getItem('btp-seen') || !!localStorage.getItem('btp-seen'); } catch (e) {}
+  if (rm || capture || seen || /[?&]intro=0/.test(q)) c.add('no-intro');
+})();
+</script>
+<!--head-->
+</head>
+<body>
+<!--body-->
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+/* ---------- 4. brand orbit ---------- */
+.orbit { position: relative; background: var(--paper); padding: clamp(4rem, 10vw, 7rem) 0 0; }
+.orbit__head { text-align: center; padding: 0 var(--gutter); display: flex; flex-direction: column; align-items: center; gap: .5rem; }
+.orbit__title { font-size: clamp(3.25rem, 11vw, 8rem); }
+.orbit__count { font-variant-numeric: tabular-nums; }
+
+/* static (reduced motion / no JS): pills wrap under her */
+.orbit__stage { position: relative; display: flex; flex-direction: column; align-items: center; margin-top: 1.5rem; }
+.orbit__figure { position: relative; z-index: 2; display: flex; justify-content: center; }
+.orbit__figure img { height: min(62svh, 560px); width: auto; max-width: none; }
+.orbit__stage::before {
+  content: ''; position: absolute; left: 50%; top: 18%; width: min(52svh, 80vw); aspect-ratio: 1; transform: translateX(-50%);
+  border-radius: 50%; background: var(--lime);
+}
+.orbit__ring { position: relative; z-index: 3; display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; padding: 1.5rem var(--gutter) 4rem; max-width: 760px; }
+
+.brand-pill {
+  padding: .6em 1.25em; border-radius: 999px; background: var(--white); color: var(--ink);
+  border: 1.5px solid var(--ink); box-shadow: 0 3px 0 var(--ink);
+  font: 700 clamp(.85rem, 1.3vw, 1.1rem)/1 var(--f-sans); white-space: nowrap;
+}
+.brand--sans-black { font-weight: 900; text-transform: uppercase; letter-spacing: -.02em; }
+.brand--sans-light { font-weight: 300; text-transform: lowercase; letter-spacing: .01em; }
+.brand--sans-wide { font-weight: 600; text-transform: uppercase; letter-spacing: .24em; font-size: .85em; }
+.brand-pill.brand--sans-wide { font-size: clamp(.72rem, 1.1vw, .92rem); }
+.brand--serif { font-family: var(--f-serif); font-style: italic; font-weight: 400; font-size: 1.3em; }
+.brand-pill.brand--serif { font-size: clamp(1.05rem, 1.7vw, 1.4rem); }
+.brand--display { font-family: var(--f-display); font-weight: 900; text-transform: uppercase; letter-spacing: .03em; font-size: 1.25em; }
+.brand-pill.brand--display { font-size: clamp(1.05rem, 1.7vw, 1.4rem); }
+
+/* 3D orbit */
+.fx .orbit { height: 180svh; padding: 0; }
+.fx .orbit__sticky { position: sticky; top: 0; height: 100svh; overflow: hidden; }
+.fx .orbit__head { position: absolute; left: 0; right: 0; top: calc(var(--nav-h) + 2svh); z-index: 4; }
+.fx .orbit__stage { position: absolute; inset: 0; display: block; margin: 0; }
+.fx .orbit__stage::before { top: auto; bottom: 6svh; }
+.fx .orbit__figure { position: absolute; left: 0; right: 0; bottom: 0; }
+.fx .orbit__ring { position: absolute; left: 50%; top: 66%; width: 0; height: 0; padding: 0; z-index: auto; display: block; }
+.fx .brand-pill { position: absolute; left: 0; top: 0; transform: translate(-50%, -50%); }
+.fx .orbit.is-active .brand-pill { will-change: transform, opacity; }
+
+@media (max-width: 767px) {
+  .orbit__figure img { height: min(50svh, 440px); }
+  .fx .orbit__ring { top: 70%; }
+  .brand-pill { font-size: .78rem; padding: .55em 1em; }
+  .brand-pill.brand--serif, .brand-pill.brand--display { font-size: .98rem; }
+  .brand-pill.brand--sans-wide { font-size: .66rem; }
+}

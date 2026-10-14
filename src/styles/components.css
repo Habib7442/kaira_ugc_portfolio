@@ -1,0 +1,92 @@
+/* ---------- buttons: outline pills that fill with lime ---------- */
+.btn {
+  --b: currentColor;
+  display: inline-flex; align-items: center; justify-content: center; gap: .5em;
+  min-height: 48px; padding: .8em 1.5em; border-radius: 999px;
+  border: 1.5px solid var(--b); background: transparent; color: inherit;
+  font: 600 .95rem/1.1 var(--f-sans); text-decoration: none; white-space: nowrap;
+  transition: background-color .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease), transform .25s var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+.btn .icon { width: 1.2em; height: 1.2em; flex: none; }
+.btn:hover, .btn:active { background: var(--lime); color: var(--ink); border-color: var(--ink); }
+.btn:active { transform: scale(.97); }
+.btn--lime { background: var(--lime); color: var(--ink); border-color: var(--ink); }
+.btn--lime:hover { background: var(--ink); color: var(--lime); }
+.ink .btn--lime { border-color: var(--lime); }
+.ink .btn--lime:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+.btn--light { color: var(--paper); }
+.btn--light:hover, .btn--light:active { border-color: var(--lime); }
+.btn--sm { min-height: 40px; padding: .55em 1.1em; font-size: .85rem; }
+.btn--lg { min-height: 56px; padding: 1em 1.6em; font-size: 1rem; }
+
+.icon-btn {
+  display: inline-grid; place-items: center; width: 48px; height: 48px; border-radius: 50%;
+  background: var(--paper); color: var(--ink); border: 1.5px solid var(--ink);
+  transition: background-color .2s var(--ease), transform .2s var(--ease);
+}
+.icon-btn:hover { background: var(--lime); }
+.icon-btn:active { transform: scale(.94); }
+.icon-btn .icon { width: 22px; height: 22px; }
+
+/* ---------- sticker labels ---------- */
+.sticker {
+  --r: -3deg;
+  display: inline-flex; align-items: center; gap: .45em;
+  padding: .42em .9em; border-radius: 999px;
+  background: var(--lime); color: var(--ink); border: 1.5px solid var(--ink);
+  box-shadow: 0 3px 0 var(--ink);
+  font: 700 .82rem/1 var(--f-sans); letter-spacing: .02em; white-space: nowrap;
+  transform: rotate(var(--r));
+}
+.sticker--lavender { background: var(--lavender); }
+.sticker--light { background: var(--white); }
+.sticker--small { font-size: .7rem; padding: .38em .75em; box-shadow: 0 2px 0 var(--ink); text-transform: uppercase; letter-spacing: .06em; }
+.sticker--dot { background: var(--white); --r: 2deg; }
+.sticker--dot::before { content: ''; width: .55em; height: .55em; border-radius: 50%; background: var(--tomato); }
+
+/* ---------- text pills ---------- */
+.pills { display: flex; flex-wrap: wrap; gap: .5rem; }
+.pill {
+  display: inline-flex; align-items: center; gap: .4em; padding: .5em 1em; border-radius: 999px;
+  border: 1.5px solid currentColor; font: 600 .85rem/1.1 var(--f-sans);
+}
+.pill__price { font-weight: 500; opacity: .8; }
+
+/* ---------- nav ---------- */
+.progress { position: fixed; inset: 0 0 auto; height: 3px; z-index: 60; pointer-events: none; }
+.progress span { display: block; height: 100%; background: var(--lime); box-shadow: 0 0 0 .5px rgba(19, 20, 42, .25); transform-origin: 0 50%; transform: scaleX(0); }
+.nav {
+  position: fixed; inset: 0 0 auto; z-index: 50; height: var(--nav-h);
+  display: flex; align-items: center; justify-content: space-between; padding: 0 var(--gutter);
+  pointer-events: none;
+}
+.nav > * { pointer-events: auto; }
+.nav__name {
+  font: 900 1.35rem/1 var(--f-display); text-transform: uppercase; letter-spacing: .03em; text-decoration: none;
+  background: var(--paper); color: var(--ink); padding: .45em .8em .4em; border-radius: 999px; border: 1.5px solid var(--ink);
+}
+.nav__cta { box-shadow: 0 3px 0 var(--ink); }
+
+/* ---------- opening (pure CSS so it never blocks on JS; ≤ 1.2s) ---------- */
+.intro { display: none; }
+.fx:not(.no-intro) .intro {
+  position: fixed; inset: 0; z-index: 400; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem;
+  background: var(--ink); color: var(--paper);
+  animation: intro-out .3s cubic-bezier(.7, 0, .3, 1) .75s forwards;
+}
+.intro__word { display: flex; font: 900 clamp(5rem, 24vw, 15rem)/.8 var(--f-display); }
+.intro__letter {
+  display: inline-block; padding: 0 .02em; opacity: 0;
+  animation: sticker-drop .42s cubic-bezier(.3, 1.6, .5, 1) calc(var(--i) * 45ms) forwards;
+}
+.intro__letter:nth-child(odd) { color: var(--lime); }
+.intro__letter:nth-child(3n) { color: var(--lavender); }
+.intro__bar { width: min(260px, 50vw); height: 4px; border-radius: 4px; background: rgba(241, 242, 247, .16); overflow: hidden; }
+.intro__bar span { display: block; height: 100%; background: var(--lime); transform-origin: 0 50%; transform: scaleX(0); animation: bar-fill .55s cubic-bezier(.6, 0, .3, 1) .12s forwards; }
+@keyframes sticker-drop {
+  from { opacity: 0; transform: translateY(-40vh) rotate(-18deg) scale(1.3); }
+  to { opacity: 1; transform: translateY(0) rotate(calc((var(--i) - 2) * 3deg)) scale(1); }
+}
+@keyframes bar-fill { to { transform: scaleX(1); } }
+@keyframes intro-out { to { transform: translateY(-100%); visibility: hidden; } }

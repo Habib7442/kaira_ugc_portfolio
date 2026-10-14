@@ -1,0 +1,75 @@
+/* ---------- 1. cover ---------- */
+.cover { position: relative; background: var(--paper); height: 100svh; min-height: 560px; }
+.fx .cover { height: 160svh; }
+.cover__sticky { position: sticky; top: 0; height: 100svh; min-height: 560px; overflow: hidden; perspective: 1400px; perspective-origin: 50% 80%; }
+.cover__scene { position: absolute; inset: 0; transform-origin: 50% 100%; }
+.is-active .cover__scene, .is-active .cover__letter, .is-active .cover__figure img { will-change: transform, opacity; }
+
+.cover__bg { position: absolute; inset: 0; pointer-events: none; }
+.cover__disc {
+  position: absolute; left: 50%; bottom: -6%; width: min(78vh, 92vw); aspect-ratio: 1; margin-left: calc(min(78vh, 92vw) / -2);
+  border-radius: 50%; background: var(--lavender); opacity: .5;
+}
+.cover__ring {
+  position: absolute; left: 50%; bottom: -14%; width: min(104vh, 130vw); aspect-ratio: 1; margin-left: calc(min(104vh, 130vw) / -2);
+  border-radius: 50%; border: 1.5px dashed rgba(19, 20, 42, .22);
+}
+
+.cover__meta {
+  position: absolute; top: calc(var(--nav-h) + .5rem); left: var(--gutter); right: var(--gutter); z-index: 3;
+  display: flex; justify-content: space-between; gap: 1rem;
+  font: 500 .78rem/1.2 var(--f-sans); text-transform: uppercase; letter-spacing: .12em;
+}
+
+/* Giant first name. Size never overflows: capped by the number of letters. */
+.cover__name {
+  position: absolute; left: 0; right: 0; top: 20%; z-index: 1;
+  display: flex; justify-content: center;
+  font: 900 min(clamp(7rem, 30vw, 32rem), calc(94vw / (var(--chars) * .5)))/.8 var(--f-display);
+  color: var(--ink); perspective: 1800px; pointer-events: none;
+}
+.cover__letters { display: flex; transform-style: preserve-3d; }
+.cover__letter { display: inline-block; transform-origin: 50% 60%; }
+
+/* The cut-out lives in its own layer ABOVE the letters, so letters can never cover her face. */
+.cover__figure {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; height: 88svh;
+  display: flex; justify-content: center; align-items: flex-end; pointer-events: none;
+}
+.cover__figure picture { height: 100%; }
+.cover__figure img { height: 100%; width: auto; max-width: none; transform-origin: 50% 100%; filter: drop-shadow(0 18px 30px rgba(19, 20, 42, .16)); }
+
+.cover__tag { position: absolute; z-index: 3; font-size: .95rem; }
+.cover__tag--1 { left: 16%; top: 58%; --r: -7deg; }
+.cover__tag--2 { right: 15%; top: 44%; --r: 6deg; }
+
+.cover__bottom {
+  position: absolute; left: var(--gutter); right: var(--gutter); bottom: max(1.5rem, env(safe-area-inset-bottom)); z-index: 3;
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem;
+}
+.cover__tagline { font: italic 400 clamp(1.3rem, 2.1vw, 2rem)/1.12 var(--f-serif); max-width: 19ch; }
+.cover__ctas { display: flex; gap: .6rem; flex-wrap: wrap; justify-content: flex-end; }
+.cover__ctas .btn { background: var(--paper); }
+.cover__ctas .btn--lime { background: var(--lime); }
+.cover__ctas .btn:hover { background: var(--lime); }
+.cover__ctas .btn--lime:hover { background: var(--ink); }
+
+@media (max-width: 767px) {
+  .fx .cover { height: 120svh; }
+  .cover__name { top: 17%; }
+  .cover__figure { height: 74svh; }
+  .cover__meta { font-size: .68rem; letter-spacing: .08em; }
+  .cover__tag { font-size: .78rem; }
+  .cover__tag--1 { left: 4%; top: 47%; }
+  .cover__tag--2 { right: 4%; top: 37%; }
+  .cover__bottom { flex-direction: column; align-items: stretch; gap: .75rem; }
+  .cover__tagline {
+    max-width: none; font-size: 1.2rem; background: var(--white); padding: .8rem 1rem; border-radius: 18px;
+    border: 1.5px solid var(--ink); box-shadow: 0 3px 0 var(--ink);
+  }
+  .cover__ctas { flex-wrap: nowrap; }
+  .cover__ctas .btn { flex: 1; padding-inline: .8em; }
+}
+@media (max-width: 767px) and (max-height: 700px) {
+  .cover__tagline { font-size: 1.05rem; padding: .6rem .9rem; }
+}
